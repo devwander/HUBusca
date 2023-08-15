@@ -1,0 +1,29 @@
+.card_container {
+  padding: 20px;
+  min-width: 400px;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: #ccc;
+
+  @media (max-width: 1000px) {
+    min-width: 80vw;
+  }
+}
+
+.user_image {
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.data {
+  padding-left: 20px;
+}
+
+.data span {
+  font-weight: bold;
+}
