@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 
 import styles from "@/styles/Home.module.css";
+import Image from "next/image";
 
 interface GitHubUserData {
   login: string;
@@ -93,6 +94,17 @@ export default function Home() {
       )}
 
       {data ? <CardUser data={data} /> : initalSafe ? <CardNotFoundUser /> : ""}
+
+      {!initalSafe && (
+        <Image
+          priority={true}
+          width={233}
+          height={189.5}
+          className={styles.default_image_search}
+          src="/images/undraw_group_hangout_re_4t8r.svg"
+          alt="github octocat"
+        />
+      )}
     </main>
   );
 }

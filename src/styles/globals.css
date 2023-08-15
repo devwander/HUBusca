@@ -10,5 +10,9 @@
   min-height: 70vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+
+  @media (max-width: 1000px) {
+    min-height: 65vh;
+  }
 }
