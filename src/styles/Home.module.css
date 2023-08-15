@@ -42,3 +42,7 @@
 .default_image_search {
   margin-top: 15px;
 }
+
+.card_link {
+  text-decoration: none;
+}

@@ -1,0 +1,42 @@
+.infos_container {
+  border: 1px solid #ccc;
+  margin: 30px;
+  width: 80vw;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.user_image {
+  border: 2px solid #ccc;
+  border-radius: 50%;
+}
+
+.user_main_infos {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.user_main_infos p {
+  color: #ccc;
+  font-size: 1em;
+}
+
+.user_minor_infos {
+  width: 100%;
+  padding: 10px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}

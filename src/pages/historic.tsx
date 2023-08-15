@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "@/styles/Historic.module.css";
 import CardUser from "@/components/CardUser";
 import CardNotFoundUsersHistoric from "@/components/CardNotFoundUsersHistoric";
+import Link from "next/link";
 
 interface GitHubUserData {
   login: string;
@@ -43,12 +44,17 @@ export default function Historic() {
 
   return (
     <main className={styles.historic_container}>
+      {usersData && (
+        <button className={styles.btn_clear} onClick={clearHistoryFunc}>
+          Limpar Histórico
+        </button>
+      )}
 
-      {usersData && <button className={styles.btn_clear} onClick={clearHistoryFunc}>Limpar Histórico</button>}
-      
       {usersData !== null ? (
         usersData.map((user: GitHubUserData) => (
-          <CardUser key={user.login} data={user} />
+          <Link key={user.login} className={styles.card_link} href={`user/${user.login}`}>
+            <CardUser key={user.login} data={user} />
+          </Link>
         ))
       ) : (
         <CardNotFoundUsersHistoric />

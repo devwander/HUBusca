@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 interface GitHubUserData {
   login: string;
@@ -93,7 +94,7 @@ export default function Home() {
         </p>
       )}
 
-      {data ? <CardUser data={data} /> : initalSafe ? <CardNotFoundUser /> : ""}
+      {data ? (<Link className={styles.card_link} href={`user/${data.login}`}><CardUser data={data}/></Link>)  : initalSafe ? <CardNotFoundUser /> : ""}
 
       {!initalSafe && (
         <Image
