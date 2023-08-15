@@ -24,13 +24,37 @@ export default function Home() {
         const response: any = await axios.get(
           `https://api.github.com/users/${searchValue}`
         );
-        setSearchValue("");
+
+        let usersStorage = localStorage.getItem("users");
+
+        if (usersStorage) {
+          
+          let users: Array<string> = JSON.parse(usersStorage);
+
+          if (users.includes(response.data.login)) {
+            users = users.filter((item) => {
+              return item !== response.data.login
+            })
+          }
+
+          users.push(response.data.login);
+
+          localStorage.setItem("users", JSON.stringify(users));
+        } else {
+          let users: Array<string> = JSON.parse("[]");
+
+          users.push(response.data.login);
+
+          localStorage.setItem("users", JSON.stringify(users));
+        }
+
         return setData(response.data);
       } catch (error) {
         setData(null);
       } finally {
         setInitialSafe(true);
         setNotValueUser(false);
+        setSearchValue("");
       }
     } else {
       setNotValueUser(true);
