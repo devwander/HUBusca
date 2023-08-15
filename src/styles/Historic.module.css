@@ -1,0 +1,19 @@
+.historic_container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px;
+}
+
+.btn_clear {
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #fff;
+  transition: .4s;
+}
+
+.btn_clear:hover {
+  color: #0d1117;
+  background-color: #fff;
+}

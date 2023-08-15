@@ -25,25 +25,31 @@ export default function Home() {
           `https://api.github.com/users/${searchValue}`
         );
 
+        const userData: GitHubUserData = {
+          login: response.data.login,
+          name: response.data.name,
+          location: response.data.location,
+          avatar_url: response.data.avatar_url,
+        };
+
         let usersStorage = localStorage.getItem("users");
 
         if (usersStorage) {
-          
           let users: Array<string> = JSON.parse(usersStorage);
 
-          if (users.includes(response.data.login)) {
+          if (users.includes(JSON.stringify(userData))) {
             users = users.filter((item) => {
-              return item !== response.data.login
-            })
+              return item !== JSON.stringify(userData);
+            });
           }
 
-          users.push(response.data.login);
+          users.push(JSON.stringify(userData));
 
           localStorage.setItem("users", JSON.stringify(users));
         } else {
           let users: Array<string> = JSON.parse("[]");
 
-          users.push(response.data.login);
+          users.push(JSON.stringify(userData));
 
           localStorage.setItem("users", JSON.stringify(users));
         }
