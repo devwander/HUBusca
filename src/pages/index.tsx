@@ -98,7 +98,15 @@ export default function Home() {
         </p>
       )}
 
-      {data ? <CardUser data={data} /> : initalSafe ? <CardNotFoundUser /> : ""}
+      {data ? (
+        <Link className={styles.card_link} href={`user/${user}`}>
+          <CardUser data={data} />
+        </Link>
+      ) : initalSafe ? (
+        <CardNotFoundUser />
+      ) : (
+        ""
+      )}
 
       {!initalSafe && (
         <Image
