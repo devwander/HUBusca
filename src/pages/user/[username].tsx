@@ -32,6 +32,7 @@ export default function User() {
   );
   const [dataRepos, setDataRepos] = useState<ReporData | null>(null);
   const router = useRouter();
+
   const { username } = router.query;
 
   async function fetchData() {
@@ -66,7 +67,7 @@ export default function User() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [router.query]);
 
   return (
     <main className={styles.infos_container}>

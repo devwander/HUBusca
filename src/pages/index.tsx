@@ -6,6 +6,7 @@ import { useState } from "react";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface GitHubUserData {
   login: string;
@@ -16,12 +17,15 @@ interface GitHubUserData {
 
 export default function Home() {
   const [searchValue, setSearchValue] = useState("");
+  const [user, setUser] = useState("");
   const [data, setData] = useState<GitHubUserData | null>(null);
   const [initalSafe, setInitialSafe] = useState(false);
   const [notValueUser, setNotValueUser] = useState(false);
+  const router = useRouter();
 
   const fetchData = async () => {
     if (searchValue != "") {
+      setUser(searchValue);
       try {
         const response: any = await axios.get(
           `https://api.github.com/users/${searchValue}`
@@ -94,7 +98,7 @@ export default function Home() {
         </p>
       )}
 
-      {data ? (<Link className={styles.card_link} href={`user/${data.login}`}><CardUser data={data}/></Link>)  : initalSafe ? <CardNotFoundUser /> : ""}
+      {data ? <CardUser data={data} /> : initalSafe ? <CardNotFoundUser /> : ""}
 
       {!initalSafe && (
         <Image

@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import styles from "@/styles/CardUser.module.css";
+import { useRouter } from "next/router";
 
 interface GitHubUserData {
   login: string;
@@ -14,8 +15,17 @@ interface Props {
 }
 
 export default function CardUser({ data }: Props) {
+  const router = useRouter();
+
+  function handleProfile() {
+    router.push({
+      pathname: `user/${data.login}`,
+      query: router.query,
+    });
+  }
+
   return (
-    <div className={styles.card_container}>
+    <div onClick={handleProfile} className={styles.card_container}>
       <Image
         className={styles.user_image}
         src={data.avatar_url}

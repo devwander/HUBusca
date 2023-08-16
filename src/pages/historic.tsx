@@ -4,6 +4,7 @@ import styles from "@/styles/Historic.module.css";
 import CardUser from "@/components/CardUser";
 import CardNotFoundUsersHistoric from "@/components/CardNotFoundUsersHistoric";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface GitHubUserData {
   login: string;
@@ -17,6 +18,7 @@ export default function Historic() {
     null
   );
   const [clearHistory, setClearHistory] = useState(false);
+  const router = useRouter();
 
   const fetchData = async () => {
     if (localStorage.getItem("users")) {
@@ -52,7 +54,11 @@ export default function Historic() {
 
       {usersData !== null ? (
         usersData.map((user: GitHubUserData) => (
-          <Link key={user.login} className={styles.card_link} href={`user/${user.login}`}>
+          <Link
+            key={user.login}
+            className={styles.card_link}
+            href={`user/${user.login}`}
+          >
             <CardUser key={user.login} data={user} />
           </Link>
         ))
