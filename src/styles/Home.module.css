@@ -12,7 +12,7 @@
   padding: 10px;
   border-radius: 5px;
   color: #0d1117;
-  border: 1px solid #ccc;
+  border: 1px solid #f2f2f2;
   margin: 50px 0 40px 0;
 
   @media (max-width: 1000px) {
@@ -23,11 +23,12 @@
 
 .home_container button {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #f2f2f2;
   border-radius: 5px;
   margin-left: 5px;
   color: #fff;
   transition: 0.4s;
+  background-color: #536b93;
 }
 
 .home_container button:hover {

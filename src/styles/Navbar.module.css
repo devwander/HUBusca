@@ -5,7 +5,8 @@
   align-items: center;
   padding: 1em 1.2em;
   color: #fff;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #f2f2f2;
+  background-color: #536b93;
 }
 
 .logo {

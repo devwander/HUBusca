@@ -1,5 +1,4 @@
 .infos_container {
-  border: 1px solid #ccc;
   margin: 30px;
   width: 80vw;
   height: 100%;
@@ -7,6 +6,8 @@
   align-self: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: #8da1bf;
+  border-radius: 5px;
 
   @media (max-width: 1000px) {
     display: flex;
@@ -20,10 +21,13 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  background-color: #536B93;
 }
 
 .user_image {
-  border: 2px solid #ccc;
+  border: 2px solid #f2f2f2;
   border-radius: 50%;
 }
 
@@ -33,7 +37,7 @@
 }
 
 .user_main_infos p {
-  color: #ccc;
+  color: #f2f2f2;
   font-size: 1em;
 }
 

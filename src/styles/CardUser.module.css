@@ -6,10 +6,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid #f2f2f2;
   border-radius: 5px;
-  color: #ccc;
+  color: #fff;
   margin: 0 20px;
+  transition: 0.4s;
 
   @media (max-width: 1000px) {
     align-items: start;
@@ -17,13 +18,20 @@
   }
 }
 
+.card_container:hover {
+  background-color: #8da1bf;
+  color: #0d1117;
+  border-color: #0d1117;
+}
+
 .user_image {
   border-radius: 50%;
-  border: 1px solid #ccc;
+  border: 1px solid #0d1117;
 }
 
 .data {
   padding-left: 20px;
+  flex: 1;
 }
 
 .data span {

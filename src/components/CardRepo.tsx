@@ -22,7 +22,12 @@ export default function CardRepo({ data }: RepoData) {
         <div className={styles.card_infos}>
           <div className={styles.card_main_infos}>
             <h1>{data.name}</h1>
-            <p>Linguagem: {data.language}</p>
+            {data.language && (
+              <p>
+                <span>Linguagem: </span>
+                {data.language}
+              </p>
+            )}
           </div>
           <div className={styles.card_date_infos}>
             <p>

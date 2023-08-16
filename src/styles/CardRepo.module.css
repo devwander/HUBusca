@@ -3,29 +3,34 @@
 }
 
 .repo_container {
-  border: 1px solid #ccc;
+  border: 1px solid #f2f2f2;
   border-radius: 10px;
   padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background-color: #6c86ac;
+  transition: 0.4s;
+}
 
-  @media (max-width: 1000px) {
-    display: flex;
-    flex-direction: column;
-  }
+.repo_container:hover {
+  color: #0d1117;
 }
 
 .card_infos {
   padding: 10px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .card_main_infos {
   padding-bottom: 5px;
+}
+
+.card_main_infos span {
+  font-weight: bold;
 }
 
 .card_main_infos h1 {
